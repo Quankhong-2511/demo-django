@@ -67,7 +67,7 @@ def detail(request, pk):
     context = {'chitiet': chitiet}
     return render(request, 'detail.html', context)
 
-@login_required()
+
 def them(request):
     form = ThemForm()
     if request.method == 'POST':
@@ -86,7 +86,7 @@ def them(request):
     context = {'form': form}
     return render(request, 'them.html', context)
 
-@login_required()
+
 def sua(request, pk):
     sua = Sinhvien.objects.get(id=pk)
     form = SuaForm(instance=sua)
@@ -106,7 +106,7 @@ def sua(request, pk):
     context = {'form': form}
     return render(request,'sua.html' , context)
 
-@login_required()
+
 def xoa(request, pk):
     xoa = Sinhvien.objects.get(id=pk)
     
